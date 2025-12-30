@@ -58,7 +58,7 @@ jobs:
         cp rust-core/target/${{ matrix.target }}/release/${{ matrix.binary_name }} ${{ matrix.asset_name }}
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.asset_name }}
         path: ${{ matrix.asset_name }}
@@ -133,7 +133,7 @@ jobs:
       run: go build -o ollctl-${{ matrix.platform }}${{ matrix.ext }} ./cmd/ollctl
 
     - name: Upload Go CLI Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ollctl-${{ matrix.platform }}
         path: go-tools/ollctl-${{ matrix.platform }}${{ matrix.ext }}
@@ -148,7 +148,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Download all artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         path: dist
 
