@@ -1,0 +1,18 @@
+# OLL Assessment Driver Configuration
+
+policy:
+  mode: "block" # Options: block, audit, allow
+  
+  # Whitelisted AI tools (if mode is block)
+  whitelist:
+    - "vscode-copilot-authorized"
+
+  # Blacklisted AI tools (specific signatures)
+  blacklist:
+    - "chatgpt-desktop"
+    - "perplexity-browser"
+    - "comet"
+
+reporting:
+  local_log: "C:/ProgramData/OLL/logs/driver.log"
+  remote_endpoint: "https://admin.oll-assessments.com/api/v1/events"

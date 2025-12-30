@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "core",
+    "platform-common",
+    "platform-win",
+    "platform-macos",
+    "platform-linux",
+    "agent",
+]

@@ -1,0 +1,45 @@
+[package]
+name = "agent"
+version = "0.1.0"
+authors = ["OLL Academy <tech@ollacademy.com>"]
+description = "OLL Assessment Driver Agent for Secure Assessments"
+license = "Proprietary"
+edition = "2021"
+
+[package.metadata.bundle]
+name = "OLL Assessment Driver"
+identifier = "com.ollacademy.agent"
+copyright = "Copyright (c) OLL Academy 2025. All rights reserved."
+category = "Education"
+short_description = "Secure Assessment Agent"
+
+[package.metadata.deb]
+maintainer = "OLL Academy <tech@ollacademy.com>"
+copyright = "2025, OLL Academy"
+depends = "$auto"
+section = "education"
+priority = "optional"
+assets = [
+    ["target/release/agent", "usr/bin/oll-agent", "755"],
+]
+
+[dependencies]
+aes-gcm = "0.10.3"
+arboard = "3.6.1"
+base64 = "0.22.1"
+core = { path = "../core" }
+platform-common = { path = "../platform-common" }
+pqc_kyber = { version = "0.7.1", features = ["std", "kyber768"] }
+rand = "0.8.5"
+tao = "0.34.5"
+url = "2.5.7"
+wry = "0.53"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+platform-win = { path = "../platform-win" }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+platform-macos = { path = "../platform-macos" }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+platform-linux = { path = "../platform-linux" }
