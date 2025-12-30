@@ -33,3 +33,26 @@ cargo build
 cd go-tools
 go build ./cmd/ollctl
 ```
+
+### Running Tests
+
+#### Rust
+```bash
+cd rust-core
+cargo test --all-targets --all-features
+```
+
+#### Go
+```bash
+cd go-tools
+go test ./...
+```
+
+## Contributing
+
+1. Fork the repository and create a feature branch.
+2. Make your changes in `rust-core` and/or `go-tools`.
+3. Run the tests locally:
+   - `cargo test --all-targets --all-features` in `rust-core`
+   - `go test ./...` in `go-tools`
+4. Open a pull request against `main` with a clear description of your changes.
